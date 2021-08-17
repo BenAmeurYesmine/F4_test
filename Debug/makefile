@@ -61,8 +61,8 @@ all: main-build
 main-build: F4_test.elf secondary-outputs
 
 # Tool invocations
-F4_test.elf: $(OBJS) $(USER_OBJS) C:\Users\ASUS\.jenkins\workspace\F4_test\STM32F407IGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "F4_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ASUS\.jenkins\workspace\F4_test\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+F4_test.elf: $(OBJS) $(USER_OBJS) ..\STM32F407IGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "F4_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"..\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
