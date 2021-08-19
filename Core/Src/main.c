@@ -59,6 +59,17 @@ void SystemClock_Config(void);
 /**
   * @brief  The application entry point.
   * @retval int
+  * @startuml
+     hide footbox
+     skinparam BoxPadding 50
+     box "Le diagramme de séquence:"
+     participant Exemple
+     end box
+     [-> Exemple: setA()
+     Activate Exemple
+     Exemple->Exemple: getA()
+@enduml
+ * \image{inline} html main.png "activity"
   */
 int main(void)
 {
